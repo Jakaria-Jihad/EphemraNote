@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="purple">#CCA23CE3</color>
+    <color name="light_purple">#A59CD3</color>
+    <color name="deep_purple">#4B2D9F</color>
+    <color name="deep_green">#18CF41</color>
+    <color name="dark_green">#2B4E28</color>
+    <color name="bright_pink">#EE51B1</color>
     <color name="marron_original">#820000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="my_primary">#FF24D3FE</color>

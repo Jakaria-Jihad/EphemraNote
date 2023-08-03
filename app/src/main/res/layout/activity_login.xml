@@ -6,39 +6,39 @@
     android:layout_height="match_parent"
     android:layout_marginVertical="16dp"
     android:layout_marginHorizontal="32dp"
-    tools:context=".CreateAccountActivity">
+    tools:context=".LoginActivity">
     <ImageView
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginVertical="32dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/signup_icon"
-        android:src="@drawable/signup"
+        android:id="@+id/login_icon"
+        android:src="@drawable/login"
         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/signUp_text"
-        android:layout_below="@+id/signup_icon"
+        android:layout_below="@+id/login_icon"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello"
+            android:text="Welcome"
             android:textStyle="bold"
             android:textSize="32sp"
             android:textAlignment="center"
-            android:textColor="@color/light_purple"
+            android:textColor="@color/deep_purple"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Let's Get Started"
+            android:text="Back"
             android:textStyle="bold"
             android:textSize="38sp"
             android:textAlignment="center"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/deep_green"
             />
 
     </LinearLayout>
@@ -74,22 +74,12 @@
             android:padding="16dp"
             android:layout_marginTop="12dp"
             />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"
-            android:id="@+id/user_password_confirmed_edited_text"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:background="@drawable/rounded_corner"
-            android:padding="16dp"
-            android:layout_marginTop="12dp"
-            />
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
-            android:id="@+id/create_account_btn"
+            android:id="@+id/login_btn"
             android:layout_height="64dp"
-            android:text="@string/create_account"
+            android:text="@string/login"
             android:layout_marginTop="12dp"
             android:textSize="16sp"
             />
@@ -114,14 +104,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? "
+            android:text="Don't have an account? "
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:id="@+id/login_textView_btn_sgnpg"
-            android:text="Login"
+            android:id="@+id/create_account_textView_btn_lgnpg"
+            android:text="Create Account"
             />
 
     </LinearLayout>

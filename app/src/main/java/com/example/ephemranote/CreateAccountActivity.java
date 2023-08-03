@@ -22,21 +22,22 @@ public class CreateAccountActivity extends AppCompatActivity {
     EditText userEmail, userPassword, confirmPassword;
     Button createAccountbtn;
     ProgressBar creationProgressbar;
-    TextView loginTextviewwbtn;
+    TextView loginTextviewbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
         userEmail = findViewById(R.id.user_email_edited_text);
         userPassword = findViewById(R.id.user_password_edited_text);
         confirmPassword = findViewById(R.id.user_password_confirmed_edited_text);
         createAccountbtn = findViewById(R.id.create_account_btn);
         creationProgressbar = findViewById(R.id.onCreate_progressbar);
-        loginTextviewwbtn = findViewById(R.id.login_textView_btn_sgnpg);
+        loginTextviewbtn = findViewById(R.id.login_textView_btn_sgnpg);
 
         createAccountbtn.setOnClickListener(v -> createAccount());
-        loginTextviewwbtn.setOnClickListener(v -> finish());
+        loginTextviewbtn.setOnClickListener(v -> finish());
     }
     void createAccount(){
         String email = userEmail.getText().toString();
@@ -80,12 +81,12 @@ public class CreateAccountActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         changingProgress(false);
                         if (task.isSuccessful()){
-                            Toast.makeText(CreateAccountActivity.this, "Account created successfully, check email for verification", Toast.LENGTH_SHORT).show();
+                            Utility.showToastMessage(CreateAccountActivity.this, "Account created successfully, check email for verification");
                             firebaseAuth.getCurrentUser().sendEmailVerification();
                             firebaseAuth.signOut();
                             finish();
                         }else {
-                            Toast.makeText(CreateAccountActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            Utility.showToastMessage(CreateAccountActivity.this, task.getException().getLocalizedMessage());
                         }
 
                     }
