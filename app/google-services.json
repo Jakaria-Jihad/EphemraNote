@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "72170390253",
+    "project_id": "ephemranote",
+    "storage_bucket": "ephemranote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72170390253:android:2d583fdf595561241c82e4",
+        "android_client_info": {
+          "package_name": "com.example.ephemranote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72170390253-11e4vu3579cfppmaks59i9nlntrbf02n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwwVlGYb4C6sQ1lVe5Sw2zW5fkx3yUvrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72170390253-11e4vu3579cfppmaks59i9nlntrbf02n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
