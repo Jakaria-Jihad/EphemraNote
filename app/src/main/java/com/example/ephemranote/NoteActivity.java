@@ -4,6 +4,7 @@ package com.example.ephemranote;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ public class NoteActivity extends AppCompatActivity {
 
     EditText titleText, contentText;
     ImageButton saveNoteBtn;
-    TextView pageTitleText;
+    TextView pageTitleText, deleteNoteTextViewBtn;
 
     String title, content, docId;
     boolean is_editMode = false;
@@ -37,15 +38,20 @@ public class NoteActivity extends AppCompatActivity {
         content = getIntent().getStringExtra("content");
         docId = getIntent().getStringExtra("title");
 
+        deleteNoteTextViewBtn = findViewById(R.id.delete_note_textview_btn);
+
         if (docId != null && !docId.isEmpty()){
             is_editMode = true;
         }
-        if (is_editMode){
-            pageTitleText.setText("Edit your note");
-        }
-
         titleText.setText("title");
         contentText.setText("content");
+
+        if (is_editMode){
+            pageTitleText.setText("Edit your note");
+            deleteNoteTextViewBtn.setVisibility(View.VISIBLE);
+        }
+
+        deleteNoteTextViewBtn.setOnClickListener((v) -> deleteNoteFromFirebase());
 
         saveNoteBtn.setOnClickListener(v -> saveNote());
     }
@@ -81,6 +87,20 @@ public class NoteActivity extends AppCompatActivity {
                 Utility.showToastMessage(NoteActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage());
             }
         });
+
+    }
+    void deleteNoteFromFirebase(){
+        DocumentReference documentReference;
+        documentReference = Utility.getCollecReferenceNotes().document(docId);
+        documentReference.delete().addOnCompleteListener(task -> {
+            if (task.isSuccessful()){
+                Utility.showToastMessage(NoteActivity.this, "Note deleted successfully!");
+                finish();
+            }else{
+                Utility.showToastMessage(NoteActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage());
+            }
+        });
+
 
     }
 
