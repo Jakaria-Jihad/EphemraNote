@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="naked_pink">#FFEEFC</color>
     <color name="light_purple">#A59CD3</color>
     <color name="deep_purple">#4B2D9F</color>
     <color name="deep_green">#18CF41</color>
@@ -9,5 +10,7 @@
     <color name="marron_original">#820000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="my_primary">#FF24D3FE</color>
+    <color name="my_primary_light">#D2E7EC</color>
     <color name="my_primary_bg">#DBFF3B</color>
+    <color name="soft_grey">#BAB6B6</color>
 </resources>
