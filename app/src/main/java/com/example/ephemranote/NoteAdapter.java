@@ -1,6 +1,7 @@
 package com.example.ephemranote;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,16 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note, NoteAdapter.Note
         holder.titleText.setText(note.title);
         holder.contentText.setText(note.content);
         holder.timestampText.setText(Utility.timestamptoString(note.timestamp));
+
+        holder.itemView.setOnClickListener((v) -> {
+            Intent intent = new Intent(context, NoteActivity.class);
+            intent.putExtra("title", note.title);
+            intent.putExtra("content", note.content);
+            String docId = this.getSnapshots().getSnapshot(position).getId();
+            intent.putExtra("docId", docId);
+
+            context.startActivity(intent);
+        });
     }
 
     @NonNull
