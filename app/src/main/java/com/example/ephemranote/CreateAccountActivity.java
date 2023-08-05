@@ -3,6 +3,7 @@ package com.example.ephemranote;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PatternMatcher;
 import android.util.Patterns;
@@ -37,7 +38,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         loginTextviewbtn = findViewById(R.id.login_textView_btn_sgnpg);
 
         createAccountbtn.setOnClickListener(v -> createAccount());
-        loginTextviewbtn.setOnClickListener(v -> finish());
+        loginTextviewbtn.setOnClickListener(v -> startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class)));
     }
     void createAccount(){
         String email = userEmail.getText().toString();
