@@ -19,7 +19,9 @@ public class NoteActivity extends AppCompatActivity {
 
     EditText titleText, contentText;
     ImageButton saveNoteBtn;
-    TextView pageTitleText, deleteNoteTextViewBtn;
+    TextView pageTitleText;
+
+    TextView deleteNoteTextViewBtn;
 
     String title, content, docId;
     boolean is_editMode = false;
@@ -33,18 +35,17 @@ public class NoteActivity extends AppCompatActivity {
         contentText = findViewById(R.id.note_content_text);
         saveNoteBtn = findViewById(R.id.save_note_btn);
         pageTitleText = findViewById(R.id.page_title);
+        deleteNoteTextViewBtn = findViewById(R.id.delete_note_textview_btn);
 
         title = getIntent().getStringExtra("title");
         content = getIntent().getStringExtra("content");
-        docId = getIntent().getStringExtra("title");
-
-        deleteNoteTextViewBtn = findViewById(R.id.delete_note_textview_btn);
+        docId = getIntent().getStringExtra("docId");
 
         if (docId != null && !docId.isEmpty()){
             is_editMode = true;
         }
-        titleText.setText("title");
-        contentText.setText("content");
+        titleText.setText(title);
+        contentText.setText(content);
 
         if (is_editMode){
             pageTitleText.setText("Edit your note");
