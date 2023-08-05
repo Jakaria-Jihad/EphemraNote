@@ -23,6 +23,6 @@ public class Utility {
     }
 
     static String timestamptoString(Timestamp timestamp) {
-        return new SimpleDateFormat("dd/MM/yyyy").format(timestamp.toDate());
+        return new SimpleDateFormat("MM/dd/yyyy").format(timestamp.toDate());
     }
 }
